@@ -1,16 +1,11 @@
 # portfolio
 
-A new Flutter project.
+My Developer Portfolio
 
-## Getting Started
+## Software Development Stack
 
-This project is a starting point for a Flutter application.
+This project was built using Flutter for the web. It is a detailed portfolio of my journey as a software developer. I started my journey back in 2016 with Java SE and Microsfot VisualBasic.net. I then moved to Android application development in 2017. I learnt web development using javascript, HTML, CSS and pythom in 2018 and run with it until i discovered Flutter and fell in love with its elegance, cross-platfrom nature and powerful UI rendering.
 
-A few resources to get you started if this is your first Flutter project:
+All in all the road thus far has not been easy but I trust in God and His plan for my life. I continue to soldier on forward as long as I have breathe in my body.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+PS: This repo is public. If you like the portfolio feel free to clone the repo and reason about the code yourself. In case you need clarification on any part of the project feel free to reach out to me through `denny.muasa@gmail.com`
