@@ -12,7 +12,7 @@ class PulsatingDot extends StatefulWidget {
 
 class _PulsatingDotState extends State<PulsatingDot>
     with SingleTickerProviderStateMixin {
-  final double _dotSize = 14.0;
+  final double _dotSize = 15.0;
 
   final Color _containerColor = Colors.white;
   final Color _dotColor = AppColors.primary;
@@ -40,8 +40,8 @@ class _PulsatingDotState extends State<PulsatingDot>
         alignment: Alignment.center,
         children: <Widget>[
           Container(
-            width: _dotSize * 1.5,
-            height: _dotSize * 1.5,
+            width: _dotSize * 2,
+            height: _dotSize * 2,
             decoration: const BoxDecoration(
               color: Colors.transparent,
               shape: BoxShape.circle,
@@ -53,8 +53,8 @@ class _PulsatingDotState extends State<PulsatingDot>
               return Opacity(
                 opacity: 1.0 - _controller.value,
                 child: Container(
-                  width: _dotSize / 2 + _controller.value * _dotSize,
-                  height: _dotSize / 2 + _controller.value * _dotSize,
+                  width: _dotSize / 1.5 + (_controller.value * _dotSize),
+                  height: _dotSize / 1.5 + (_controller.value * _dotSize),
                   decoration: BoxDecoration(
                     color: _containerColor,
                     shape: BoxShape.circle,

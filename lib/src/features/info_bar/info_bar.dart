@@ -43,10 +43,12 @@ class BusinessCard extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: Sizes.p4,
-                right: Sizes.p4,
-                child: PulsatingDot(),
-              )
+                bottom: 0,
+                right: 0,
+                child: Tooltip(
+                    message: 'I am available for freelance hire',
+                    child: PulsatingDot()),
+              ),
             ],
           ),
           gapH16,
