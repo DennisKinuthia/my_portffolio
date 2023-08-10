@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/info_bar.dart';
 import 'package:portfolio/src/features/navbar/nav_bar.dart';
 import 'package:portfolio/src/features/section_builder/section_builder.dart';
@@ -42,15 +43,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const InfoBar(),
-            SectionBuilder(section: _section),
-            const NavBar(),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: Sizes.p20),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const InfoBar(),
+              SectionBuilder(section: _section),
+              const NavBar(),
+            ],
+          ),
         ),
       ),
     );
