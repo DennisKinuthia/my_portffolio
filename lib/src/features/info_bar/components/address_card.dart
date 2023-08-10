@@ -11,10 +11,18 @@ class AddressCard extends StatelessWidget {
     final today = DateTime.now();
     final age = today.year - 1996;
     return Container(
+      margin: const EdgeInsets.symmetric(horizontal: Sizes.p20),
       padding: const EdgeInsets.symmetric(
-          vertical: Sizes.p20, horizontal: Sizes.p24),
+          horizontal: Sizes.p20, vertical: Sizes.p16),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(
+            color: AppColors.textColor.withOpacity(.3),
+            width: 1.0,
+          ),
+        ),
+      ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -35,7 +35,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     setState(() {
-      _section = 'home';
+      _section = 'Home';
     });
     super.initState();
   }
@@ -45,16 +45,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: Sizes.p20),
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              const InfoBar(),
-              SectionBuilder(section: _section),
-              const NavBar(),
-            ],
-          ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            const InfoBar(),
+            SectionBuilder(section: _section),
+            NavBar(
+              sectionLabel: _section,
+            ),
+          ],
         ),
       ),
     );

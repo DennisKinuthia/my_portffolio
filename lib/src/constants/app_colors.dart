@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class AppColors {
   ///primary: used to draw attention to text and icons in buttons and tappable elements
   static const primary = Color(0xFFffc10a);
-  static const headlineColor = Color(0xFFfafafc);
+  static const headlineColor = Color.fromARGB(255, 225, 225, 225);
   static const textColor = Color(0xFF8c8c8e);
   static const bsCardColor = Color(0xFF252530);
   static const mainBgColor = Color(0xFF1e1e28);

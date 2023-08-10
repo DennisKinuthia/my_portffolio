@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
+import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/components/address_card.dart';
 import 'package:portfolio/src/features/info_bar/components/photo_title_card.dart';
 
@@ -9,6 +10,7 @@ class InfoBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(right: Sizes.p32),
       color: AppColors.navBgcolor,
       child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,

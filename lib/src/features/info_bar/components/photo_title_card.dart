@@ -15,7 +15,7 @@ class PhotoAndTitleCard extends StatelessWidget {
       color: AppColors.bsCardColor,
       padding: const EdgeInsets.symmetric(
         horizontal: Sizes.p64,
-        vertical: Sizes.p32,
+        vertical: Sizes.p24,
       ),
       child: Column(
         children: <Widget>[
@@ -38,7 +38,7 @@ class PhotoAndTitleCard extends StatelessWidget {
               ),
             ],
           ),
-          gapH16,
+          gapH12,
           Text(
             'Dennis Kinuthia',
             style: GoogleFonts.roboto(
