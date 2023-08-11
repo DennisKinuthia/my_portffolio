@@ -20,7 +20,7 @@ class LanguageSelector extends StatelessWidget {
             isActive: false,
             onTap: null,
           ),
-          // gapH12,
+          gapH12,
           LanguageButton(
             lan: 'EN',
             isActive: true,
