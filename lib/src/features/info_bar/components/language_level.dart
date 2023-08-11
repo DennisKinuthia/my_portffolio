@@ -17,26 +17,31 @@ class LanguageLevelRing extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        gapH12,
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: Sizes.p8),
           child: Stack(
             children: [
-              AspectRatio(
-                aspectRatio: 1.0,
-                child: CustomPaint(
-                  painter: RingPainter(
-                    progress: percentage,
-                    notCompletedColor: AppColors.mainBgColor,
-                    completedColor: AppColors.primary,
+              SizedBox(
+                width: 54.0,
+                height: 54.0,
+                child: AspectRatio(
+                  aspectRatio: 1.0,
+                  child: CustomPaint(
+                    painter: RingPainter(
+                      progress: percentage,
+                      notCompletedColor: AppColors.cardsBgColor,
+                      completedColor: AppColors.primary,
+                    ),
                   ),
                 ),
               ),
               Positioned.fill(
                 child: Center(
                   child: Text(
-                    '$percentage',
+                    '$percentage%',
                     style: GoogleFonts.roboto(
                       fontSize: Sizes.p12,
                       color: AppColors.textColor,
@@ -48,14 +53,17 @@ class LanguageLevelRing extends StatelessWidget {
           ),
         ),
         gapH12,
-        Text(
-          language,
-          style: GoogleFonts.roboto(
-            color: AppColors.headlineColor,
-            fontSize: Sizes.p12,
-            fontWeight: FontWeight.w400,
+        Center(
+          child: Text(
+            language,
+            style: GoogleFonts.roboto(
+              color: AppColors.headlineColor,
+              fontSize: Sizes.p12,
+              fontWeight: FontWeight.w400,
+            ),
           ),
-        )
+        ),
+        gapH12,
       ],
     );
   }
