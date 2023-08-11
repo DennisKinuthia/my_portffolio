@@ -39,12 +39,17 @@ class _PulsatingDotState extends State<PulsatingDot>
       child: Stack(
         alignment: Alignment.center,
         children: <Widget>[
-          Container(
-            width: _dotSize * 2,
-            height: _dotSize * 2,
-            decoration: const BoxDecoration(
-              color: Colors.transparent,
-              shape: BoxShape.circle,
+          MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: GestureDetector(
+              child: Container(
+                width: _dotSize * 2,
+                height: _dotSize * 2,
+                decoration: const BoxDecoration(
+                  color: Colors.transparent,
+                  shape: BoxShape.circle,
+                ),
+              ),
             ),
           ),
           AnimatedBuilder(

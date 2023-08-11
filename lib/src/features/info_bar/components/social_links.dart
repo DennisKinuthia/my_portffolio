@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/common_widgets/info_containers.dart';
+import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 
 class SocialLinks extends StatelessWidget {
@@ -24,7 +25,7 @@ class SocialLinks extends StatelessWidget {
   }
 }
 
-class SocialIcon extends StatelessWidget {
+class SocialIcon extends StatefulWidget {
   const SocialIcon({
     super.key,
     required this.onTap,
@@ -35,14 +36,34 @@ class SocialIcon extends StatelessWidget {
   final String image;
 
   @override
+  State<SocialIcon> createState() => _SocialIconState();
+}
+
+class _SocialIconState extends State<SocialIcon> {
+  Color _iconColor = AppColors.textColor;
+  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-        onTap: onTap,
-        child: Image.asset(
-          image,
-          height: Sizes.p12,
-          width: Sizes.p12,
-          fit: BoxFit.contain,
-        ));
+    return MouseRegion(
+      onHover: (PointerEvent event) {
+        setState(() {
+          _iconColor = AppColors.headlineColor;
+        });
+      },
+      onExit: (PointerEvent event) {
+        setState(() {
+          _iconColor = AppColors.textColor;
+        });
+      },
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+          onTap: widget.onTap,
+          child: Image.asset(
+            widget.image,
+            color: _iconColor,
+            height: Sizes.p12,
+            width: Sizes.p12,
+            fit: BoxFit.contain,
+          )),
+    );
   }
 }
