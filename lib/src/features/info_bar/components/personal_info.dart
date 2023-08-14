@@ -12,8 +12,8 @@ class PersonalInfoRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final today = DateTime.now();
     final age = today.year - 1996;
-    return Wrap(
-      spacing: 120.0,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,

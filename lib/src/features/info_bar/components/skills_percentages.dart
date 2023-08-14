@@ -14,15 +14,12 @@ class SkillsLevels extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          SkillMeasure(skill: 'Flutter', percentLevel: 0.85),
+          SkillMeasure(skill: 'Flutter/Dart', percentLevel: 0.85),
           SkillMeasure(skill: 'Firebase', percentLevel: 0.75),
           SkillMeasure(skill: 'HTML/CSS', percentLevel: 0.90),
           SkillMeasure(skill: 'JavaScript', percentLevel: 0.85),
           SkillMeasure(skill: 'NodeJs', percentLevel: 0.80),
           SkillMeasure(skill: 'Python', percentLevel: 0.70),
-          SkillMeasure(skill: 'Wordpress', percentLevel: 0.90),
-          SkillMeasure(skill: 'Git', percentLevel: 0.85),
-          SkillMeasure(skill: 'MongoDB', percentLevel: 0.80),
         ],
       ),
     );
@@ -52,7 +49,7 @@ class SkillMeasure extends StatelessWidget {
                 skill,
                 style: GoogleFonts.roboto(
                   fontSize: Sizes.p12,
-                  color: AppColors.textColor,
+                  color: AppColors.headlineColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -60,7 +57,7 @@ class SkillMeasure extends StatelessWidget {
                 '${percentLevel * 100}%',
                 style: GoogleFonts.roboto(
                   fontSize: Sizes.p12,
-                  color: AppColors.textColor,
+                  color: AppColors.headlineColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),

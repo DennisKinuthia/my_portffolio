@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/components/address_card.dart';
+import 'package:portfolio/src/features/info_bar/components/download_cv.dart';
 import 'package:portfolio/src/features/info_bar/components/language_proficiency.dart';
+import 'package:portfolio/src/features/info_bar/components/packages_and_technologies.dart';
 import 'package:portfolio/src/features/info_bar/components/photo_title_card.dart';
 import 'package:portfolio/src/features/info_bar/components/skills_percentages.dart';
 import 'package:portfolio/src/features/info_bar/components/social_links.dart';
@@ -17,22 +19,30 @@ class InfoBar extends StatelessWidget {
       width: size.width * .23,
       margin: const EdgeInsets.only(right: Sizes.p32),
       color: AppColors.navBgcolor,
-      child: const Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
+      child: Column(
         children: <Widget>[
-          PhotoAndTitleCard(),
-          Expanded(
+          const PhotoAndTitleCard(),
+          const Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               physics: BouncingScrollPhysics(),
-              child: Column(children: <Widget>[
-                AddressCard(),
-                LanguageProficiency(),
-                SkillsLevels(),
-              ]),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  AddressCard(),
+                  LanguageProficiency(),
+                  SkillsLevels(),
+                  PackagesAndTechnologies(),
+                  DownloadCV(),
+                ],
+              ),
             ),
           ),
-          SocialLinks(),
+          Container(
+            width: size.width,
+            color: AppColors.bsCardColor,
+            child: const SocialLinks(),
+          ),
           //LanguageProficiency(),
         ],
       ),

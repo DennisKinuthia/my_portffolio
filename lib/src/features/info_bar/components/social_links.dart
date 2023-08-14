@@ -13,6 +13,7 @@ class SocialLinks extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
+          // TODO : set up links to social media accounts
           SocialIcon(
             onTap: () {},
             image: 'assets/images/linkedin.png',
