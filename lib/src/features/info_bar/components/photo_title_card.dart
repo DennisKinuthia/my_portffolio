@@ -11,7 +11,9 @@ class PhotoAndTitleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Container(
+      width: size.width,
       color: AppColors.bsCardColor,
       padding: const EdgeInsets.symmetric(
         horizontal: Sizes.p64,

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/src/common_widgets/info_containers.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
@@ -11,30 +10,32 @@ class SocialLinks extends StatelessWidget {
   Widget build(BuildContext context) {
     return InformationContainer(
       showBottomMargin: false,
-      child: Wrap(
-        spacing: 38.0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          //TODO: replace with SVG
           SocialIcon(
             onTap: () {},
-            image: 'assets/images/linkedin.svg',
+            image: 'assets/images/linkedin.png',
             label: 'LinkedIn',
           ),
           SocialIcon(
             onTap: () {},
-            image: 'assets/images/dribbble.svg',
+            image: 'assets/images/dribbble.png',
             label: 'Dribbble',
           ),
           SocialIcon(
             onTap: () {},
-            image: 'assets/images/behance.svg',
+            image: 'assets/images/behance.png',
             label: 'Behance',
           ),
           SocialIcon(
-              onTap: () {}, image: 'assets/images/github.png', label: 'Github'),
+            onTap: () {},
+            image: 'assets/images/github.png',
+            label: 'Github',
+          ),
           SocialIcon(
             onTap: () {},
-            image: 'assets/images/twitter.svg',
+            image: 'assets/images/twitter.png',
             label: 'Twitter',
           ),
         ],
@@ -77,10 +78,10 @@ class _SocialIconState extends State<SocialIcon> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
           onTap: widget.onTap,
-          child: SvgPicture.asset(
+          child: Image.asset(
             widget.image,
+            color: _iconColor,
             fit: BoxFit.contain,
-            semanticsLabel: widget.label,
             width: Sizes.p16,
             height: Sizes.p16,
           )),

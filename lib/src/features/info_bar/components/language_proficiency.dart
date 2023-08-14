@@ -9,11 +9,12 @@ class LanguageProficiency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const InformationContainer(
-      child: Wrap(
-        spacing: Sizes.p4,
+      child: Row(
         children: <Widget>[
           LanguageLevelRing(percentage: 85.0, language: 'Swahili'),
+          gapW4,
           LanguageLevelRing(percentage: 90.0, language: 'English'),
+          gapW4,
           LanguageLevelRing(percentage: 75.0, language: 'Kikuyu'),
         ],
       ),
