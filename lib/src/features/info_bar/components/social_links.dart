@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:portfolio/src/common_widgets/info_containers.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
@@ -14,11 +15,28 @@ class SocialLinks extends StatelessWidget {
         spacing: 38.0,
         children: <Widget>[
           //TODO: replace with SVG
-          SocialIcon(onTap: () {}, image: 'assets/images/linkedin.png'),
-          SocialIcon(onTap: () {}, image: 'assets/images/dribbble.png'),
-          SocialIcon(onTap: () {}, image: 'assets/images/behance.png'),
-          SocialIcon(onTap: () {}, image: 'assets/images/github.png'),
-          SocialIcon(onTap: () {}, image: 'assets/images/twitter.png'),
+          SocialIcon(
+            onTap: () {},
+            image: 'assets/images/linkedin.svg',
+            label: 'LinkedIn',
+          ),
+          SocialIcon(
+            onTap: () {},
+            image: 'assets/images/dribbble.svg',
+            label: 'Dribbble',
+          ),
+          SocialIcon(
+            onTap: () {},
+            image: 'assets/images/behance.svg',
+            label: 'Behance',
+          ),
+          SocialIcon(
+              onTap: () {}, image: 'assets/images/github.png', label: 'Github'),
+          SocialIcon(
+            onTap: () {},
+            image: 'assets/images/twitter.svg',
+            label: 'Twitter',
+          ),
         ],
       ),
     );
@@ -30,10 +48,12 @@ class SocialIcon extends StatefulWidget {
     super.key,
     required this.onTap,
     required this.image,
+    required this.label,
   });
 
   final VoidCallback onTap;
   final String image;
+  final String label;
 
   @override
   State<SocialIcon> createState() => _SocialIconState();
@@ -57,12 +77,12 @@ class _SocialIconState extends State<SocialIcon> {
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
           onTap: widget.onTap,
-          child: Image.asset(
+          child: SvgPicture.asset(
             widget.image,
-            color: _iconColor,
-            height: Sizes.p12,
-            width: Sizes.p12,
             fit: BoxFit.contain,
+            semanticsLabel: widget.label,
+            width: Sizes.p16,
+            height: Sizes.p16,
           )),
     );
   }
