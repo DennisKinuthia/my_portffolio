@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 abstract class AnimationControllerState<T extends StatefulWidget>
     extends State<T> with SingleTickerProviderStateMixin {
-  AnimationControllerState(this.animationDuration, this.upperBound);
-  final double upperBound;
+  AnimationControllerState(this.animationDuration);
+
   final Duration animationDuration;
   late final animationController = AnimationController(
       vsync: this,
       duration: animationDuration,
       lowerBound: 0.0,
-      upperBound: upperBound)
+      upperBound: 1.0)
     ..forward();
 
   @override

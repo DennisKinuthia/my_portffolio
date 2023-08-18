@@ -13,21 +13,18 @@ class LanguageProficiency extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           AnimatedPercentageRing(
-            percentage: 95,
+            percentage: 80,
             language: 'Swahili',
-            completed: false,
-          ),
-          gapW4,
-          AnimatedPercentageRing(
-            percentage: 90,
-            language: 'English',
-            completed: false,
           ),
           gapW4,
           AnimatedPercentageRing(
             percentage: 85,
+            language: 'English',
+          ),
+          gapW4,
+          AnimatedPercentageRing(
+            percentage: 75,
             language: 'Kikuyu',
-            completed: false,
           ),
         ],
       ),

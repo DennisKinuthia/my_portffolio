@@ -23,14 +23,12 @@ class RingPainter extends CustomPainter {
     final radius =
         notCompleted ? (size.width - strokeWidth) / 2 : size.width / 2;
 
-    if (notCompleted) {
-      final backgroundPaint = Paint()
-        ..isAntiAlias = true
-        ..strokeWidth = strokeWidth
-        ..color = notCompletedColor
-        ..style = PaintingStyle.stroke;
-      canvas.drawCircle(center, radius, backgroundPaint);
-    }
+    final backgroundPaint = Paint()
+      ..isAntiAlias = true
+      ..strokeWidth = strokeWidth
+      ..color = notCompletedColor
+      ..style = PaintingStyle.stroke;
+    canvas.drawCircle(center, radius, backgroundPaint);
 
     final foregroundPaint = Paint()
       ..isAntiAlias = true

@@ -9,27 +9,22 @@ class AnimatedPercentageRing extends StatefulWidget {
     super.key,
     required this.percentage,
     required this.language,
-    required this.completed,
   });
 
-  //bool hasCompletedState;
-  final bool completed;
   final double percentage;
   final String language;
 
   @override
-  _AnimatedPercentageRingState createState() => _AnimatedPercentageRingState(
-        const Duration(milliseconds: 1000),
-        percentage / 100,
-      );
+  _AnimatedPercentageRingState createState() =>
+      _AnimatedPercentageRingState(const Duration(milliseconds: 1000));
 }
 
 class _AnimatedPercentageRingState
     extends AnimationControllerState<AnimatedPercentageRing> {
-  _AnimatedPercentageRingState(Duration duration, double upperBound)
-      : super(duration, upperBound);
+  _AnimatedPercentageRingState(Duration duration) : super(duration);
 
   late final Animation<double> _animation;
+
   @override
   void initState() {
     super.initState();
