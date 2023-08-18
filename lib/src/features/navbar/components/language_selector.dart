@@ -11,7 +11,6 @@ class LanguageSelector extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Sizes.p24),
       color: AppColors.bsCardColor,
       child: const Column(
         children: <Widget>[

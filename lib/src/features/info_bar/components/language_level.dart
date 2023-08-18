@@ -9,9 +9,11 @@ class LanguageLevelRing extends StatelessWidget {
     super.key,
     required this.percentage,
     required this.language,
+    required this.progress,
   });
   final double percentage;
   final String language;
+  final double progress;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +33,8 @@ class LanguageLevelRing extends StatelessWidget {
                   aspectRatio: 1.0,
                   child: CustomPaint(
                     painter: RingPainter(
-                      progress: percentage,
+                      percentage: percentage,
+                      progress: progress,
                       notCompletedColor: AppColors.cardsBgColor,
                       completedColor: AppColors.primary,
                     ),

@@ -16,7 +16,7 @@ class InfoBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * .23,
+      width: size.width * 0.23,
       margin: const EdgeInsets.only(right: Sizes.p32),
       color: AppColors.navBgcolor,
       child: Column(
