@@ -51,9 +51,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             const InfoBar(),
             SectionBuilder(section: _section),
-            NavBar(
-              sectionLabel: _section,
-            ),
+            NavBar(sectionLabel: _section),
           ],
         ),
       ),
