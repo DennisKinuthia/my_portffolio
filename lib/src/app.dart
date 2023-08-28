@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/info_bar.dart';
-import 'package:portfolio/src/features/navbar/nav_bar.dart';
 import 'package:portfolio/src/features/section_builder/section_builder.dart';
 import 'package:portfolio/src/localization/string_hardcoded.dart';
 
@@ -50,8 +49,9 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             const InfoBar(),
-            SectionBuilder(section: _section),
-            NavBar(sectionLabel: _section),
+            Expanded(
+              child: SectionBuilder(section: _section),
+            ),
           ],
         ),
       ),

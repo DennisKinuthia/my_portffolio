@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/features/home_section/presentation/home_section.dart';
+import 'package:portfolio/src/features/navbar/nav_bar.dart';
 
 class SectionBuilder extends StatefulWidget {
   const SectionBuilder({super.key, required this.section});
@@ -15,7 +16,7 @@ class _SectionBuilderState extends State<SectionBuilder> {
   bool _isDrawerOpen = false;
   void _openDrawer() {
     setState(() {
-      _xOffset = 100;
+      _xOffset = -100;
       _isDrawerOpen = true;
     });
   }
@@ -32,10 +33,13 @@ class _SectionBuilderState extends State<SectionBuilder> {
     return AnimatedContainer(
       transform: Matrix4.translationValues(_xOffset, 0, 0),
       duration: const Duration(milliseconds: 250),
-      child: const Row(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[HomeSection()],
+        children: <Widget>[
+          const HomeSection(),
+          NavBar(sectionLabel: widget.section),
+        ],
       ),
     );
   }
