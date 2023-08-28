@@ -16,40 +16,46 @@ class _LanguageSelectorState extends State<LanguageSelector> {
   bool _isEnActive = true;
   bool _isArActive = false;
 
-  void _toggleLanguages() {
-    if (_isEnActive && !_isArActive) {
-      setState(() {
-        _isEnActive = false;
-        _isArActive = true;
-      });
-    } else {
-      setState(() {
-        _isEnActive = true;
-        _isArActive = false;
-      });
-    }
+  void _activateArabic() {
+    setState(() {
+      _isArActive = true;
+      _isEnActive = false;
+    });
+  }
+
+  void _activateEnglish() {
+    setState(() {
+      _isEnActive = true;
+      _isArActive = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(Sizes.p16),
       width: double.infinity,
       color: AppColors.bsCardColor,
-      child: Column(
-        children: <Widget>[
-          gapH20,
-          LanguageButton(
-            lan: 'AR',
-            isActive: _isArActive,
-            onTap: () => _toggleLanguages(),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Column(
+            children: <Widget>[
+              gapH20,
+              LanguageButton(
+                lan: 'AR',
+                isActive: _isArActive,
+                onTap: () => _activateArabic(),
+              ),
+              gapH20,
+              LanguageButton(
+                lan: 'EN',
+                isActive: _isEnActive,
+                onTap: () => _activateEnglish(),
+              ),
+              gapH20,
+            ],
           ),
-          gapH20,
-          LanguageButton(
-            lan: 'EN',
-            isActive: _isEnActive,
-            onTap: () => _toggleLanguages(),
-          ),
-          gapH20,
         ],
       ),
     );

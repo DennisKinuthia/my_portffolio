@@ -42,7 +42,7 @@ class _NavBarState extends State<NavBar> {
     final Size size = MediaQuery.of(context).size;
     return AnimatedContainer(
       width: size.width * 0.05 * _sizeFactor,
-      duration: const Duration(milliseconds: 250),
+      duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
       color: AppColors.navBgcolor,
       child: Column(
@@ -66,10 +66,15 @@ class _NavBarState extends State<NavBar> {
               },
               child: GestureDetector(
                 onTap: () => _isDrawerOpen ? _closeDrawer() : _openDrawer(),
-                child: Icon(
-                  _drawerIcon,
-                  color: _iconColor,
-                  size: Sizes.p24,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Icon(
+                      _drawerIcon,
+                      color: _iconColor,
+                      size: Sizes.p24,
+                    ),
+                  ],
                 ),
               ),
             ),
