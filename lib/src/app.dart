@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     setState(() {
-      _section = 'Home';
+      _section = 'home';
     });
     super.initState();
   }
