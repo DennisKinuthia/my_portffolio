@@ -4,12 +4,12 @@ import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/navbar/components/language_selector.dart';
 import 'package:portfolio/src/features/navbar/components/menu_items.dart';
-import 'package:portfolio/src/features/section_builder/sections.dart';
+import 'package:portfolio/src/features/section_builder/section_state.dart';
 
 class NavBar extends StatefulWidget {
-  const NavBar({super.key, required this.sectionLabel});
+  const NavBar({super.key, required this.section});
 
-  final String sectionLabel;
+  final Sections section;
 
   @override
   State<NavBar> createState() => _NavBarState();
@@ -85,12 +85,12 @@ class _NavBarState extends State<NavBar> {
               child: _isDrawerOpen
                   ? MenuItems(
                       menuOptions: Sections.values,
-                      activeMenuItem: widget.sectionLabel,
+                      section: widget.section,
                     )
                   : RotatedBox(
                       quarterTurns: 1,
                       child: Text(
-                        widget.sectionLabel.toUpperCase(),
+                        widget.section.name.toUpperCase(),
                         style: GoogleFonts.roboto(
                           color: AppColors.textColor,
                           fontSize: Sizes.p12,

@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-class HomeSection extends StatelessWidget {
-  const HomeSection({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Container());
+    return Center(
+      child: Text(
+        'Home',
+        style: GoogleFonts.roboto(color: Colors.white),
+      ),
+    );
   }
 }

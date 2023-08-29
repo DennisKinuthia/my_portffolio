@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/info_bar.dart';
 import 'package:portfolio/src/features/section_builder/section_builder.dart';
+import 'package:portfolio/src/features/section_builder/section_state.dart';
 import 'package:portfolio/src/localization/string_hardcoded.dart';
 
 class MyApp extends StatelessWidget {
@@ -17,27 +18,15 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF191923),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const LandingPage(section: Sections.home),
     );
   }
 }
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class LandingPage extends StatelessWidget {
+  const LandingPage({super.key, required this.section});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  late String _section;
-  @override
-  void initState() {
-    setState(() {
-      _section = 'home';
-    });
-    super.initState();
-  }
+  final Sections section;
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +39,7 @@ class _HomePageState extends State<HomePage> {
           children: <Widget>[
             const InfoBar(),
             Expanded(
-              child: SectionBuilder(section: _section),
+              child: SectionBuilder(section: section),
             ),
           ],
         ),
