@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/features/navbar/nav_bar.dart';
-import 'package:portfolio/src/features/section_builder/section_state.dart';
 import 'package:portfolio/src/features/section_builder/sections.dart';
-import 'package:portfolio/src/features/section_builder/sections_controller.dart';
 
-class SectionBuilder extends ConsumerWidget {
+class SectionBuilder extends StatelessWidget {
   const SectionBuilder({super.key, required this.section});
 
   final Sections section;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final sectionState = ref.watch(sectionControllerProvider(section));
+  Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          sectionsPages[sectionState.section.name]!,
-          NavBar(section: sectionState.section),
+          sectionsPages[section]!,
+          NavBar(section: section),
         ],
       ),
     );

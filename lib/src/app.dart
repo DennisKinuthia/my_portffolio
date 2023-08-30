@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/info_bar.dart';
 import 'package:portfolio/src/features/section_builder/section_builder.dart';
-import 'package:portfolio/src/features/section_builder/section_state.dart';
+import 'package:portfolio/src/features/section_builder/sections.dart';
 import 'package:portfolio/src/localization/string_hardcoded.dart';
 
 class MyApp extends StatelessWidget {
@@ -18,15 +19,13 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: const Color(0xFF191923),
         useMaterial3: true,
       ),
-      home: const LandingPage(section: Sections.home),
+      home: const LandingPage(),
     );
   }
 }
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({super.key, required this.section});
-
-  final Sections section;
+  const LandingPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,12 @@ class LandingPage extends StatelessWidget {
           children: <Widget>[
             const InfoBar(),
             Expanded(
-              child: SectionBuilder(section: section),
+              child: Consumer(
+                builder: (context, ref, _) {
+                  final section = ref.watch(sectionProvider);
+                  return SectionBuilder(section: section);
+                },
+              ),
             ),
           ],
         ),

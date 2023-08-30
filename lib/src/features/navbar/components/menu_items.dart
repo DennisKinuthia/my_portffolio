@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/navbar/components/animated_menu_item_labe.dart';
-import 'package:portfolio/src/features/section_builder/section_state.dart';
-import 'package:portfolio/src/features/section_builder/sections_controller.dart';
+import 'package:portfolio/src/features/section_builder/sections.dart';
 
 class MenuItems extends StatefulWidget {
   const MenuItems({
@@ -52,11 +51,7 @@ class _MenuItemsState extends State<MenuItems> {
                               const EdgeInsets.symmetric(vertical: Sizes.p12),
                           child: MenuItemLabel(
                             onTap: () {
-                              ref
-                                  .read(
-                                      sectionControllerProvider(widget.section)
-                                          .notifier)
-                                  .updateSectionValue(option);
+                              ref.read(sectionProvider.notifier).state = option;
                             },
                             section: option,
                             isActive: widget.section.name == option.name,

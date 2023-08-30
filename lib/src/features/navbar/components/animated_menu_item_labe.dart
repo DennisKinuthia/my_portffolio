@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
-import 'package:portfolio/src/features/section_builder/section_state.dart';
+import 'package:portfolio/src/features/section_builder/sections.dart';
 
 class MenuItemLabel extends StatefulWidget {
   const MenuItemLabel({
