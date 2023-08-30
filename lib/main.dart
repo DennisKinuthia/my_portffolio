@@ -8,7 +8,11 @@ void main() async {
   // turn off the # in web urls
   setPathUrlStrategy();
   //* Enrty point of the app
-  runApp(const ProviderScope(child: MyApp()));
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 // TODO: create method to register error handlers

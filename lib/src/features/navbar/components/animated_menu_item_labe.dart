@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
 import 'package:portfolio/src/constants/app_sizes.dart';
+import 'package:portfolio/src/features/section_builder/section_state.dart';
 
 class MenuItemLabel extends StatefulWidget {
   const MenuItemLabel({
     super.key,
-    required this.label,
+    required this.section,
     required this.isActive,
     required this.onTap,
   });
 
-  final String label;
+  final Sections section;
   final bool isActive;
   final Function()? onTap;
 
@@ -30,7 +31,7 @@ class _MenuItemLabelState extends State<MenuItemLabel>
     super.initState();
     _animationController = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 1),
+      duration: const Duration(milliseconds: 500),
     )..forward();
 
     _offsetAnimation = Tween<Offset>(
@@ -65,7 +66,7 @@ class _MenuItemLabelState extends State<MenuItemLabel>
         child: SlideTransition(
           position: _offsetAnimation,
           child: Text(
-            widget.label.toUpperCase(),
+            widget.section.name.toUpperCase(),
             style: GoogleFonts.roboto(
               color: widget.isActive ? AppColors.headlineColor : _textColor,
               fontSize: Sizes.p12,

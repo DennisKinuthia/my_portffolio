@@ -7,7 +7,7 @@ class SectionsController extends StateNotifier<SectionState> {
   }) : super(SectionState(section: section));
 
   void updateSectionValue(Sections section) {
-    // copyWith is used to ensure we keep state immutable
+    // copyWith is used to ensure we keep state class immutable
     state = state.copyWith(section: section);
   }
 }

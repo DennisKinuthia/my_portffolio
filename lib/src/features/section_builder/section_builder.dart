@@ -5,27 +5,22 @@ import 'package:portfolio/src/features/section_builder/section_state.dart';
 import 'package:portfolio/src/features/section_builder/sections.dart';
 import 'package:portfolio/src/features/section_builder/sections_controller.dart';
 
-class SectionBuilder extends ConsumerStatefulWidget {
+class SectionBuilder extends ConsumerWidget {
   const SectionBuilder({super.key, required this.section});
 
   final Sections section;
 
   @override
-  ConsumerState<SectionBuilder> createState() => _SectionBuilderState();
-}
-
-class _SectionBuilderState extends ConsumerState<SectionBuilder> {
-  @override
-  Widget build(BuildContext context) {
-    final activeSection = ref.watch(sectionControllerProvider(widget.section));
+  Widget build(BuildContext context, WidgetRef ref) {
+    final sectionState = ref.watch(sectionControllerProvider(section));
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          sectionsPages[activeSection.section.name]!,
-          NavBar(section: activeSection.section),
+          sectionsPages[sectionState.section.name]!,
+          NavBar(section: sectionState.section),
         ],
       ),
     );

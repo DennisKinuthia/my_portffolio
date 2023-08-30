@@ -58,7 +58,7 @@ class _MenuItemsState extends State<MenuItems> {
                                           .notifier)
                                   .updateSectionValue(option);
                             },
-                            label: option.name,
+                            section: option,
                             isActive: widget.section.name == option.name,
                           ),
                         ),
