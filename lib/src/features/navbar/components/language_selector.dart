@@ -33,7 +33,7 @@ class _LanguageSelectorState extends State<LanguageSelector> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(Sizes.p16),
+      padding: const EdgeInsets.all(Sizes.p24),
       width: double.infinity,
       color: AppColors.bsCardColor,
       child: Row(

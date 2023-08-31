@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/common_widgets/info_containers.dart';
+import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/animations/animated_skill_percentage.dart';
 
 class SkillsLevels extends StatelessWidget {
@@ -18,6 +19,7 @@ class SkillsLevels extends StatelessWidget {
           AnimatedSkillLevel(skillName: 'JavaScript', percentage: 85),
           AnimatedSkillLevel(skillName: 'NodeJs', percentage: 80),
           AnimatedSkillLevel(skillName: 'Python', percentage: 70),
+          gapH8,
         ],
       ),
     );

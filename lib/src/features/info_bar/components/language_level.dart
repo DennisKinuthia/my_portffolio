@@ -27,8 +27,8 @@ class LanguageLevelRing extends StatelessWidget {
           child: Stack(
             children: [
               SizedBox(
-                width: 54.0,
-                height: 54.0,
+                width: Sizes.p46,
+                height: Sizes.p46,
                 child: AspectRatio(
                   aspectRatio: 1.0,
                   child: CustomPaint(

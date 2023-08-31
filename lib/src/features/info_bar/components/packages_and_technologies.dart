@@ -41,7 +41,7 @@ class Package extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
         const Icon(
-          Icons.check_rounded,
+          Icons.check_sharp,
           color: AppColors.primary,
           size: Sizes.p20,
         ),

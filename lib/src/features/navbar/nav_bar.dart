@@ -24,7 +24,7 @@ class _NavBarState extends State<NavBar> {
   void _openDrawer() {
     setState(() {
       _isDrawerOpen = true;
-      _sizeFactor = 3.5;
+      _sizeFactor = 2.5;
       _drawerIcon = Icons.close_rounded;
     });
   }
@@ -39,9 +39,8 @@ class _NavBarState extends State<NavBar> {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return AnimatedContainer(
-      width: size.width * 0.05 * _sizeFactor,
+      width: 80 * _sizeFactor,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
       color: AppColors.navBgcolor,
@@ -51,7 +50,7 @@ class _NavBarState extends State<NavBar> {
           Container(
             width: double.infinity,
             color: AppColors.bsCardColor,
-            padding: const EdgeInsets.all(Sizes.p20),
+            padding: const EdgeInsets.all(Sizes.p28),
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
               onEnter: (event) {
@@ -81,7 +80,7 @@ class _NavBarState extends State<NavBar> {
           ),
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.all(Sizes.p24),
+              padding: const EdgeInsets.all(Sizes.p32),
               child: _isDrawerOpen
                   ? MenuItems(
                       menuOptions: Sections.values,

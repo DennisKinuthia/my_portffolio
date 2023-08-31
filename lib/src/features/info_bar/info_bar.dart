@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/src/constants/app_colors.dart';
-import 'package:portfolio/src/constants/app_sizes.dart';
 import 'package:portfolio/src/features/info_bar/components/address_card.dart';
 import 'package:portfolio/src/features/info_bar/components/download_cv.dart';
 import 'package:portfolio/src/features/info_bar/components/language_proficiency.dart';
@@ -14,10 +13,8 @@ class InfoBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.23,
-      margin: const EdgeInsets.only(right: Sizes.p32),
+      width: 280,
       color: AppColors.navBgcolor,
       child: Column(
         children: <Widget>[
@@ -39,7 +36,7 @@ class InfoBar extends StatelessWidget {
             ),
           ),
           Container(
-            width: size.width,
+            width: 280,
             color: AppColors.bsCardColor,
             child: const SocialLinks(),
           ),

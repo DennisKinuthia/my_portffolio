@@ -9,24 +9,25 @@ class LanguageProficiency extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const InformationContainer(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: <Widget>[
-          AnimatedPercentageRing(
-            percentage: 80,
-            language: 'Swahili',
-          ),
-          gapW4,
-          AnimatedPercentageRing(
-            percentage: 85,
-            language: 'English',
-          ),
-          gapW4,
-          AnimatedPercentageRing(
-            percentage: 75,
-            language: 'Kikuyu',
-          ),
-        ],
+      child: Padding(
+        padding: EdgeInsets.symmetric(vertical: Sizes.p4),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: <Widget>[
+            AnimatedPercentageRing(
+              percentage: 80,
+              language: 'Swahili',
+            ),
+            AnimatedPercentageRing(
+              percentage: 85,
+              language: 'English',
+            ),
+            AnimatedPercentageRing(
+              percentage: 75,
+              language: 'Kikuyu',
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -31,7 +31,10 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(Sizes.p20),
+        padding: const EdgeInsets.symmetric(
+          horizontal: Sizes.p16,
+          vertical: Sizes.p8,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
